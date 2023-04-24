@@ -30,33 +30,32 @@ public class TestRobot {
 
 
     private static ArrayList<Robot> generateListOfRobots(int numRobots) {
-            ArrayList<Robot> robots = new ArrayList<>(numRobots);
-            for (int i = 0; i < numRobots; i++) {
-                robots.add(new Robot());
-            }
-            return robots;
+        ArrayList<Robot> robots = new ArrayList<>(numRobots);
+        for (int i = 0; i < numRobots; i++) {
+            robots.add(new Robot());
         }
+        return robots;
+    }
 
-        private static void changeStatus(ArrayList<Robot> robots) {
-            for (Robot robot : robots) {
-                robot.setStatus(true);
-                robot.dischargeBattery();
-            }
-        }
-
-        static class RobotBatteryComparator implements Comparator<Robot> {
-            @Override
-            public int compare(Robot o1, Robot o2) {
-                if (o1.getBatteryLevel() > o2.getBatteryLevel())
-                    return 1;
-                else if (o1.getBatteryLevel() < o2.getBatteryLevel())
-                    return -1;
-                else {
-                    return 0;
-                }
-            }
-
+    private static void changeStatus(ArrayList<Robot> robots) {
+        for (Robot robot : robots) {
+            robot.setStatus(true);
+            robot.dischargeBattery();
         }
     }
 
+    static class RobotBatteryComparator implements Comparator<Robot> {
+        @Override
+        public int compare(Robot o1, Robot o2) {
+            if (o1.getBatteryLevel() > o2.getBatteryLevel())
+                return 1;
+            else if (o1.getBatteryLevel() < o2.getBatteryLevel())
+                return -1;
+            else {
+                return 0;
+            }
+        }
+
+    }
+}
 

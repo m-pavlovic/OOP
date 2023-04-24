@@ -4,7 +4,7 @@ public class Tiger extends Animal {
 
     @Override
     public void produceSomeSound() {
-        System.out.println(getClass().getSimpleName() + "roars");
+        System.out.println(getClass().getSimpleName() + " roars");
     }
 
 
